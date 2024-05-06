@@ -17,3 +17,11 @@
 @else
     <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet">
 @endif
+
+   <!-- Internal Data table css -->
+   <link href="{{ URL::asset('assets/css/plugins/datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('assets/css/plugins/datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/css/plugins/datatable/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('assets/css/plugins/datatable/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/css/plugins/datatable/css/responsive.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/css/plugins/select2/css/select2.min.css') }}" rel="stylesheet">

@@ -30,3 +30,23 @@
 <!-- custom -->
 <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
 
+
+ <!-- Internal Data tables -->
+ <script src="{{ URL::asset('assets/js/datatable/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/dataTables.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/dataTables.responsive.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/responsive.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/jquery.dataTables.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/dataTables.buttons.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/datatable/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/vfs_fonts.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/buttons.html5.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/buttons.print.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/buttons.colVis.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/datatable/responsive.bootstrap4.min.js') }}"></script>
+    <!--Internal  Datatable js -->
+    <script src="{{ URL::asset('assets/js/table-data.js') }}"></script>

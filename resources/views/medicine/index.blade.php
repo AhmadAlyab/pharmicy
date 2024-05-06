@@ -28,38 +28,40 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <table id="example" class="table table-striped" style="width:100%">
+               <div class="table-responsive">
+                <table id="example" class="table key-buttons text-md-nowrap">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Proccees</th>
+                         </tr>
                     </thead>
                     <tbody>
+                    @php($i=1)
+                        @foreach($madicines as $madicine)
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011-04-25</td>
-                            <td>$320,800</td>
+                            <td>{{ $i++ }}</td>
+                            <td>{{ $madicine->name }}</td>
+                            <td>{{ $madicine->name }}</td>
+                            <td>{{ $madicine->name }}</td>
+                            <td></td>
                         </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Proccess</th>
                         </tr>
                     </tfoot>
                 </table>
+                </div>
             </div>
         </div>
     </div>
