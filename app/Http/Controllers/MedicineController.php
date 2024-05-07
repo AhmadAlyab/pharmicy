@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicine;
 use Illuminate\Http\Request;
+use App\Http\Requests\MedicineStoreRequest;
 
 class MedicineController extends Controller
 {
@@ -21,15 +22,28 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        //
+        return view('medicine.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MedicineStoreRequest $request)
     {
-        //
+       try {
+           // create new Medicine
+           Medicine::create([
+            'name'         => $request->name,
+            'status'       => $request->available,
+            'place_where'  => $request->place_where,
+            'combination'  => $request->combination,
+            'alternatives' => $request->alternatives,
+            'price'        => $request->price
+           ]);
+
+       } catch (\Throwable $th) {
+
+       }
     }
 
     /**

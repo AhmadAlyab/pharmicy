@@ -28,6 +28,9 @@
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
+                <div class="row">
+                <a href="{{ route('medicine.add') }}" type="button" class="btn btn-primary ml-5">Add madicine</a>
+                </div>
                <div class="table-responsive">
                 <table id="example" class="table key-buttons text-md-nowrap">
                     <thead>

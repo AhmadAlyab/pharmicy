@@ -27,6 +27,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('admin/dashboard',[AdminController::class, 'index']);
     Route::get('medicine',[MedicineController::class,'index'])->name('medicine.index');
     Route::get('medicine/add',[MedicineController::class,'create'])->name('medicine.add');
+    Route::post('medicine/store',[MedicineController::class,'store'])->name('medicine.store');
     Route::patch('medicine/update',[MedicineController::class,'update'])->name('medicine.update');
     Route::delete('medicine/destroy',[MedicineController::class,'destroy'])->name('medicine.destroy');
 });
