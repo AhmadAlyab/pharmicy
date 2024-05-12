@@ -17,4 +17,8 @@ class Medicine extends Model
        'price'
     ];
 
+    public function images(){
+        return $this->morphMany('App\Models\Image','imageable');
+    }
+
 }

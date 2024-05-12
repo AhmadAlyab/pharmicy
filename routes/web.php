@@ -25,11 +25,14 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('admin/dashboard',[AdminController::class, 'index']);
-    Route::get('medicine',[MedicineController::class,'index'])->name('medicine.index');
-    Route::get('medicine/add',[MedicineController::class,'create'])->name('medicine.add');
-    Route::post('medicine/store',[MedicineController::class,'store'])->name('medicine.store');
-    Route::patch('medicine/update',[MedicineController::class,'update'])->name('medicine.update');
-    Route::delete('medicine/destroy',[MedicineController::class,'destroy'])->name('medicine.destroy');
+    Route::prefix('medicine')->group(function(){
+        Route::get('/',[MedicineController::class,'index'])->name('medicine.index');
+        Route::get('/add',[MedicineController::class,'create'])->name('medicine.add');
+        Route::get('/edit/{id}',[MedicineController::class,'edit'])->name('medicine.edit');
+        Route::post('/store',[MedicineController::class,'store'])->name('medicine.store');
+        Route::patch('/update',[MedicineController::class,'update'])->name('medicine.update');
+        Route::delete('/destroy',[MedicineController::class,'destroy'])->name('medicine.destroy');
+    });
 });
 
 Route::middleware(['auth','role:customer'])->group(function(){
