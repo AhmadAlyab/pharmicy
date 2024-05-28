@@ -69,6 +69,8 @@ Madicine
                                 <a href="#" data-target="#deletemadicine{{$madicine->id}}"
                                     class="btn btn-danger" data-toggle="modal" role="button"
                                     aria-pressed="true" title="delete medicine"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('medicine.show') }}"
+                                title="show medicine" class="btn btn-success"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
                         @include('medicine.delete')

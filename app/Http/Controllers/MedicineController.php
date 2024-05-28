@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\MedicineStoreRequest;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class MedicineController extends Controller
 {
@@ -55,9 +56,18 @@ class MedicineController extends Controller
        }
     }
     // show deatiles Medicine
-    public function show(Medicine $medicine)
+    public function show()
     {
-        //
+        $madicines = Medicine::all();
+        $image = Image::where('imageable_id',$id)->where('imageable_type','App\Models\Image')->first()->filename;
+        $path = storage_path('app/images/images/medicine3/4.jpg');
+        $medicine = Medicine::findOrFail($id);
+        if ($medicine->status){
+            $val ="available";
+        }else{
+            $val = "not available";
+        }
+        return view('medicine.show', compact('madicines','val','path'));
     }
     // edit Medicine
     public function edit($id)
@@ -84,10 +94,12 @@ class MedicineController extends Controller
              'alternatives' => $request->alternatives,
              'price'        => $request->price
             ]);
-            $id = Medicine::latest()->first()->id;
-            // save file
+            $id = $request->id;
+            $name = Image::where('imageable_id',$id)->first()->filename;
+            // save image file
             if($request->hasFile('file')){
-             $image = $request->file('file');
+                Storage::disk('images')->delete('images/medicine'.$id.'/'.$name);
+               $image = $request->file('file');
                $name = $image->getClientOriginalName();
                $image->storeAs('images/medicine'.$id,$image->getClientOriginalName(),'images');
                $images = new Image();
@@ -108,6 +120,10 @@ class MedicineController extends Controller
     public function destroy(Request $request)
     {
         try {
+            $id = $request->id;
+            $file = Image::where('imageable_id',$id)->first();
+            Storage::disk('images')->delete('images/medicine'.$id.'/'.$file->filename);
+            Image::where('imageable_id',$id)->delete();
             $medicine = Medicine::findOrFail($request->id)->delete();
             toastr()->success('Data has been saved successfully!');
             return redirect()->route('medicine.index');

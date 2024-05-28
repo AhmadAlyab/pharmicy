@@ -29,7 +29,7 @@
         <div class="card card-statistics h-100">
             <div class="card-body">
                 <!-- Start Form Add -->
-                <form action="{{ route('medicine.update') }}" method="POST">
+                <form action="{{ route('medicine.update') }}" method="POST" enctype="multipart/form-data">
                     @method('patch')
                     @csrf
                     <input type="hidden" name="id" value="{{$medicine->id}}">
