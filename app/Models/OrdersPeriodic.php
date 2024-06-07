@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class OrdersPeriodic extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'period',
+        'orders_id'
+    ];
 }

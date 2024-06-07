@@ -18,9 +18,21 @@ class OrdersPeriodicController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if ($request->has('predioc'))
+        {
+            OrdersPeriodic::create([
+                'period'    => $request->period,
+                'orders_id' => $request->id
+            ]);
+            toastr()->success('Data has been saved successfully!');
+            return redirect()->route('order.index');
+        }
+        else{
+            toastr()->error('An error has occurred please try again later.');
+            return to_route('medicine.index');
+        }
     }
 
     /**

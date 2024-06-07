@@ -18,7 +18,21 @@
                         </a>
                         <ul id="elements" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{ url('medicine') }}">Medicines</a></li>
-                            <li><a href="accordions.html">Add Medicine</a></li>
+                            <li><a href="{{ url('medicine.add')}}">Add Medicine</a></li>
+                        </ul>
+                        <ul id="elements" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{ url('order') }}">Orders</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#order">
+                            <div class="pull-left"><i class="ti-palette"></i><span
+                                    class="right-nav-text">Order</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="order" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{ url('order') }}">Orders</a></li>
                         </ul>
                     </li>
                 </ul>

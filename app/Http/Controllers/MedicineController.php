@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 
 class MedicineController extends Controller
 {
+    // show medicines for admin
     public function index()
     {
         $madicines = Medicine::all();
@@ -132,5 +133,11 @@ class MedicineController extends Controller
             toastr()->error('An error has occurred please try again later.');
             return to_route('medicine.index');
         }
+    }
+
+    public function index_customer()
+    {
+        $madicines = Medicine::all();
+        return view('medicine.indexCostumer', compact('madicines'));
     }
 }
